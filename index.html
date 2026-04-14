@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -14,65 +14,28 @@
     50%     { opacity:1; }
   }
   *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-
-  /* ── DARK THEME (default) ── */
-  [data-theme="dark"] {
-    --bg:#0E1117;
-    --card:#1A2030;
-    --border:rgba(255,255,255,0.18);
-    --border-light:rgba(255,255,255,0.08);
-    --row-hover:rgba(255,255,255,0.03);
-    --bar-bg:rgba(255,255,255,0.06);
-    --heading:#F0F2F8;
-    --body:#C0C6D8;
-    --sub:#A8B2C8;
-    --muted:#8892A8;
-    --table-head:#1E2535;
-    --toggle-bg:#1A2030;
-    --logo-text:#0E1117;
-  }
-
-  /* ── LIGHT THEME ── */
-  [data-theme="light"] {
-    --bg:#F5F5F7;
-    --card:#FFFFFF;
-    --border:rgba(0,0,0,0.1);
-    --border-light:rgba(0,0,0,0.06);
-    --row-hover:rgba(0,0,0,0.02);
-    --bar-bg:rgba(0,0,0,0.06);
-    --heading:#111113;
-    --body:#4A4A52;
-    --sub:#6B6B74;
-    --muted:#9A9AA4;
-    --table-head:#F0F0F2;
-    --toggle-bg:#E8E8EC;
-    --logo-text:#FFFFFF;
-  }
-
   body {
-    background:var(--bg);
-    color:var(--heading);
+    background:#0E1117;
+    color:#F0F2F8;
     font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
     font-size:14px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
-    transition:background 0.35s ease, color 0.35s ease;
   }
   .wrap { max-width:1400px; margin:0 auto; padding:2.5rem 2rem; }
   .card {
-    background:var(--card);
-    border:1px solid var(--border);
+    background:#1A2030;
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:18px;
     padding:1.6rem 1.85rem;
-    transition:background 0.35s ease, border-color 0.35s ease;
   }
   .section-label {
     font-size:11px;
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:0.14em;
-    color:var(--sub);
+    color:#A8B2C8;
     display:block;
     margin-bottom:1.15rem;
   }
@@ -85,14 +48,13 @@
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:0.12em;
-    color:var(--muted);
-    border-bottom:1px solid var(--border);
-    background:var(--table-head);
-    transition:background 0.35s ease;
+    color:#8892A8;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    background:#1E2535;
   }
   .view { transition:opacity 0.3s ease; }
   .view.hidden { display:none; opacity:0; }
-  .filter-btn:hover { border-color:rgba(0,212,180,0.35) !important; color:var(--heading) !important; }
+  .filter-btn:hover { border-color:rgba(0,212,180,0.35) !important; color:#F0F2F8 !important; }
   .filter-btn.active { background:rgba(0,212,180,0.12) !important; border-color:rgba(0,212,180,0.35) !important; color:#00D4B4 !important; }
   .back-btn {
     display:inline-flex;
@@ -110,54 +72,6 @@
     margin-bottom:1.25rem;
   }
   .back-btn:hover { background:rgba(0,212,180,0.12); border-color:rgba(0,212,180,0.4); }
-
-  /* ── Theme Toggle ── */
-  .theme-toggle {
-    position:relative;
-    width:54px;
-    height:28px;
-    background:var(--toggle-bg);
-    border:1px solid var(--border);
-    border-radius:20px;
-    cursor:pointer;
-    transition:all 0.35s ease;
-    display:flex;
-    align-items:center;
-    padding:0 3px;
-    flex-shrink:0;
-  }
-  .theme-toggle:hover { border-color:#00D4B4; }
-  .theme-toggle-knob {
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:#00D4B4;
-    transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-    z-index:1;
-  }
-  [data-theme="dark"] .theme-toggle-knob { transform:translateX(0); }
-  [data-theme="light"] .theme-toggle-knob { transform:translateX(24px); }
-  .theme-toggle-icon {
-    position:absolute;
-    font-size:13px;
-    transition:opacity 0.35s ease;
-    user-select:none;
-  }
-  .theme-toggle-icon.moon { left:7px; }
-  .theme-toggle-icon.sun  { right:7px; }
-  [data-theme="dark"] .theme-toggle-icon.sun  { opacity:0.3; }
-  [data-theme="dark"] .theme-toggle-icon.moon { opacity:1; }
-  [data-theme="light"] .theme-toggle-icon.sun  { opacity:1; }
-  [data-theme="light"] .theme-toggle-icon.moon { opacity:0.3; }
-
-  /* ── Logo theme adaptation ── */
-  [data-theme="light"] .squ-logo .st1 { fill:#111317; }
-  [data-theme="dark"] .squ-logo .st1 { fill:#FFFFFF; }
-
   @media(max-width:900px) {
     .row-header  { flex-direction:column !important; }
     .row-3col    { flex-direction:column !important; }
@@ -166,74 +80,64 @@
     .action-grid { grid-template-columns:1fr !important; }
     .wrap        { padding:1.25rem; }
     .filter-bar  { flex-wrap:wrap !important; }
-    .top-bar-inner { flex-direction:column !important; gap:1rem !important; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- TOP BAR WITH THEME TOGGLE -->
-  <div class="section-gap" style="display:flex;justify-content:flex-end;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--border-light);margin-bottom:24px">
-    <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle dark/light mode" tabindex="0">
-      <span class="theme-toggle-icon moon">☾</span>
-      <div class="theme-toggle-knob"></div>
-      <span class="theme-toggle-icon sun">☀</span>
-    </div>
-  </div>
-
   <!-- DASHBOARD VIEW -->
   <div id="dashboard-view" class="view">
 
-    <!-- ROW 1: HEADER -->
+    <!-- ROW 1: HEADER + KPI CARDS -->
     <div class="row-header section-gap" style="display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap">
       <div style="flex-shrink:0">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
-          <div class="squ-logo" style="width:48px;height:48px;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="475 834 290 290" width="48" height="48"><style>.st1{fill:#FFFFFF}.st2{fill:#00E5C3}</style><g><polyline class="st2" points="570.26,844.05 485.24,844.05 485.24,929.07"/><path class="st1" d="M662.59,1021.69l-0.32-0.32c-15.32-15.55-13.95-41.05,1.49-56.49l24.47-24.47c7.53-7.53,9.37-19.65,3.14-28.29c-7.92-11.01-23.38-11.92-32.55-2.75l-25.28,25.28c-15.44,15.44-40.94,16.81-56.49,1.49l-0.32-0.32l0.32,0.32c15.33,15.55,13.95,41.05-1.48,56.49l-24.47,24.47c-7.53,7.53-9.36,19.65-3.14,28.29c7.93,11.01,23.38,11.92,32.56,2.74l25.28-25.28c15.44-15.44,40.94-16.81,56.49-1.48L662.59,1021.69z"/><path class="st2" d="M647.08,865.42l-140.77,140.77c-9.18-38.15,1.09-80.04,30.91-109.85C567.04,866.51,608.93,856.24,647.08,865.42z"/><path class="st2" d="M702.04,1061.16c-29.82,29.82-71.78,40.18-109.94,30.99l140.92-140.92C742.22,989.37,731.86,1031.34,702.04,1061.16z"/><polyline class="st1" points="570.26,1113.46 485.24,1113.46 485.24,1028.44"/><polyline class="st2" points="669.72,1113.46 754.74,1113.46 754.74,1028.44"/><polyline class="st1" points="669.72,844.05 754.74,844.05 754.74,929.07"/></g></svg></div>
+          <div style="width:40px;height:40px;border-radius:12px;background:#00D4B4;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#0E1117;flex-shrink:0">S</div>
           <div>
-            <div style="font-size:1.5rem;font-weight:800;color:var(--heading);letter-spacing:-0.02em;line-height:1.2">SQU <span style="color:#00D4B4">Intelligence</span></div>
-            <div style="font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px">APR 6 - APR 13, 2026</div>
+            <div style="font-size:1.5rem;font-weight:800;color:#F0F2F8;letter-spacing:-0.02em;line-height:1.2">SQU <span style="color:#00D4B4">Intelligence</span></div>
+            <div style="font-size:11px;font-weight:600;color:#8892A8;letter-spacing:0.1em;text-transform:uppercase;margin-top:3px">APR 7 - APR 14, 2026</div>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:7px;padding-left:54px">
           <div style="width:7px;height:7px;border-radius:50%;background:#00D4B4;animation:pulseGlow 2s ease infinite"></div>
-          <span style="font-size:10px;font-weight:700;color:#00D4B4;letter-spacing:0.12em;text-transform:uppercase">DATA ACTIVE</span>
+          <span style="font-size:10px;font-weight:700;color:#00D4B4;letter-spacing:0.12em;text-transform:uppercase">SYSTEM LIVE</span>
         </div>
       </div>
       <div class="score-cards" style="display:flex;gap:0.75rem;flex:1;justify-content:flex-end;flex-wrap:wrap;min-width:0">
         
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative;transition:background 0.3s,border-color 0.3s">
-      <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:var(--heading);opacity:0.85"></div>
-      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px">Total Scans</div>
-      <div style="font-size:2rem;font-weight:800;color:var(--heading);line-height:1;letter-spacing:-0.02em">
+    <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative">
+      <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#F0F2F8;opacity:0.85"></div>
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Total Scans</div>
+      <div style="font-size:2rem;font-weight:800;color:#F0F2F8;line-height:1;letter-spacing:-0.02em">
         35
       </div>
       
     </div>
         
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative;transition:background 0.3s,border-color 0.3s">
-      <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#A78BFA;opacity:0.85"></div>
-      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px">Conversations</div>
-      <div style="font-size:2rem;font-weight:800;color:#A78BFA;line-height:1;letter-spacing:-0.02em">
-        96
+    <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative">
+      <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#FF6B6B;opacity:0.85"></div>
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Engagement Rate</div>
+      <div style="font-size:2rem;font-weight:800;color:#FF6B6B;line-height:1;letter-spacing:-0.02em">
+        274<span style="font-size:14px;color:#8892A8;margin-left:3px;font-weight:500">%</span>
       </div>
       
     </div>
         
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative;transition:background 0.3s,border-color 0.3s">
+    <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative">
       <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#00D4B4;opacity:0.85"></div>
-      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px">Satisfaction</div>
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Positive Sentiment</div>
       <div style="font-size:2rem;font-weight:800;color:#00D4B4;line-height:1;letter-spacing:-0.02em">
-        87<span style="font-size:14px;color:var(--muted);margin-left:3px;font-weight:500">%</span>
+        2<span style="font-size:14px;color:#8892A8;margin-left:3px;font-weight:500">%</span>
       </div>
       
     </div>
         
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative;transition:background 0.3s,border-color 0.3s">
+    <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:140px;position:relative">
       <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#F5A623;opacity:0.85"></div>
-      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:10px">AI Unanswered</div>
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Upsell Signals</div>
       <div style="font-size:2rem;font-weight:800;color:#F5A623;line-height:1;letter-spacing:-0.02em">
-        0<span style="font-size:14px;color:var(--muted);margin-left:3px;font-weight:500">%</span>
+        4
       </div>
       
     </div>
@@ -242,17 +146,17 @@
 
     <!-- ROW 2: BIGGEST CHANGE -->
     
-    <div class="section-gap" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.75rem;transition:background 0.35s ease,border-color 0.35s ease">
+    <div class="section-gap" style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.5rem 1.75rem">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px">
         <div style="font-size:18px;line-height:1;flex-shrink:0;margin-top:2px">⚡</div>
         <div>
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#00D4B4;margin-bottom:7px">This Week's Biggest Change</div>
-          <div style="font-size:15px;font-weight:600;color:var(--heading);line-height:1.65">DEV-PU108's Bluetooth connectivity and pairing issues represent the most significant shift this week, driving 83% of all reported pain points across products.</div>
+          <div style="font-size:15px;font-weight:600;color:#F0F2F8;line-height:1.65">DEV-PU108 connectivity issues, particularly around Bluetooth pairing, represent the most significant challenge this week, accounting for 13% of its high volume of messages.</div>
         </div>
       </div>
       
-      <div style="border-top:1px solid var(--border-light);padding-top:14px;padding-left:32px">
-        <p style="font-size:13.5px;font-weight:400;color:var(--body);line-height:1.8">Overall customer sentiment this week remains largely positive at 87% satisfaction, with a manageable 13% of interactions expressing pain points. The most critical issues identified revolve around Bluetooth connectivity and pairing difficulties, predominantly affecting the DEV-PU108 and DEV-GEM2 products. The biggest risk is the persistence of these technical frustrations, while a significant opportunity lies in resolving these core issues to further enhance customer satisfaction and reduce support inquiries.</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:14px;padding-left:32px">
+        <p style="font-size:13.5px;font-weight:400;color:#C0C6D8;line-height:1.8">Overall customer sentiment this week is predominantly neutral, driven by numerous pre-purchase inquiries and post-purchase support questions. The most critical issues identified revolve around connectivity problems for DEV-PU108 and battery degradation for DEV-GEM2. Addressing these technical pain points and leveraging clear upsell signals represent the biggest risks and opportunities for improving customer satisfaction and driving future growth.</p>
       </div>
     </div>
 
@@ -261,44 +165,31 @@
       <span class="section-label">Prioritized Actions</span>
       <div class="action-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.85rem">
         
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0s;transition:background 0.3s,border-color 0.3s">
+      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#FF6B6B"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:var(--heading);line-height:1.5;padding-right:20px">Investigate and resolve underlying causes of Bluetooth connectivity and pairing failures for DEV-PU108 and DEV-GEM2.</div>
-        <div style="font-size:12.5px;color:var(--body);line-height:1.65;margin-bottom:12px">Directly addresses the most frequent and frustrating pain point, significantly improving user experience.</div>
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.12);color:#FF6B6B">high impact</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.1);color:#FF6B6B">high effort</span>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Investigate and resolve persistent Bluetooth connectivity and pairing issues for DEV-PU108.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">This is the most frequent and frustrating pain point for our highest-volume product, directly impacting customer satisfaction.</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.12);color:#FF6B6B">high</span>
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.1);color:#F5A623">product</span>
         </div>
       </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.06s;transition:background 0.3s,border-color 0.3s">
+      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.06s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#F5A623"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:var(--heading);line-height:1.5;padding-right:20px">Create comprehensive, easy-to-follow troubleshooting guides and video tutorials for Bluetooth pairing across affected products.</div>
-        <div style="font-size:12.5px;color:var(--body);line-height:1.65;margin-bottom:12px">Empowers users to self-resolve common issues, reducing support load and frustration.</div>
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium impact</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.1);color:#F5A623">medium effort</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(0,212,180,0.1);color:#00D4B4">content</span>
-        </div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.12s;transition:background 0.3s,border-color 0.3s">
-        <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#F5A623"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:var(--heading);line-height:1.5;padding-right:20px">Develop proactive communication strategies for known issues and upcoming fixes related to connectivity.</div>
-        <div style="font-size:12.5px;color:var(--body);line-height:1.65;margin-bottom:12px">Manages customer expectations and demonstrates commitment to product improvement.</div>
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium impact</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(0,212,180,0.1);color:#00D4B4">low effort</span>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Create comprehensive comparison guides and marketing content for DEV-DIONE vs. Phantom series and DEV-PU108 vs. DEV-PU98.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Leverages existing pre-purchase inquiries to educate customers and drive informed upsell decisions.</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium</span>
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(244,114,182,0.1);color:#F472B6">marketing</span>
         </div>
       </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.18s;transition:background 0.3s,border-color 0.3s">
+      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.12s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#F5A623"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:var(--heading);line-height:1.5;padding-right:20px">Review and update DEV-GEM2 battery life expectations and provide maintenance tips to address degradation concerns.</div>
-        <div style="font-size:12.5px;color:var(--body);line-height:1.65;margin-bottom:12px">Addresses a specific pain point for DEV-GEM2 users, improving product longevity perception.</div>
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium impact</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(0,212,180,0.1);color:#00D4B4">low effort</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.1);color:#F5A623">product</span>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Evaluate DEV-GEM2 battery performance and develop a clear communication and support plan for customers experiencing degradation.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Addressing battery concerns proactively can prevent further negative sentiment and maintain customer trust.</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium</span>
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(167,139,250,0.1);color:#A78BFA">support</span>
         </div>
       </div>
       </div>
@@ -311,34 +202,34 @@
         
     <div style="margin-bottom:18px">
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub)">Positive</span>
+        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8">Positive</span>
         <span style="font-size:1.15rem;font-weight:800;color:#00D4B4">2%</span>
       </div>
-      <div style="height:7px;background:var(--bar-bg);border-radius:4px;overflow:hidden">
+      <div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden">
         <div style="height:100%;width:2%;background:#00D4B4;border-radius:4px"></div>
       </div>
     </div>
         
     <div style="margin-bottom:18px">
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub)">Neutral</span>
-        <span style="font-size:1.15rem;font-weight:800;color:var(--muted)">86%</span>
+        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8">Neutral</span>
+        <span style="font-size:1.15rem;font-weight:800;color:#8892A8">86%</span>
       </div>
-      <div style="height:7px;background:var(--bar-bg);border-radius:4px;overflow:hidden">
-        <div style="height:100%;width:86%;background:var(--muted);border-radius:4px"></div>
+      <div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden">
+        <div style="height:100%;width:86%;background:#8892A8;border-radius:4px"></div>
       </div>
     </div>
         
     <div style="margin-bottom:18px">
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px">
-        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub)">Negative</span>
+        <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8">Negative</span>
         <span style="font-size:1.15rem;font-weight:800;color:#FF6B6B">12%</span>
       </div>
-      <div style="height:7px;background:var(--bar-bg);border-radius:4px;overflow:hidden">
+      <div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden">
         <div style="height:100%;width:12%;background:#FF6B6B;border-radius:4px"></div>
       </div>
     </div>
-        <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border-light);font-size:11px;font-weight:600;color:var(--muted);text-align:center;letter-spacing:0.08em;text-transform:uppercase">
+        <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.07);font-size:11px;font-weight:600;color:#8892A8;text-align:center;letter-spacing:0.08em;text-transform:uppercase">
           96 total messages
         </div>
       </div>
@@ -348,15 +239,15 @@
     <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0s">
       <div style="width:8px;height:8px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:5px"></div>
       <div>
-        <div style="font-size:13px;font-weight:700;color:var(--heading);margin-bottom:3px">DEV-GEM2</div>
-        <div style="font-size:12px;font-weight:400;color:var(--sub);line-height:1.55">DEV-GEM2 shows a balance of positive sentiment for its features and active engagement, indicating potential for growth if pain points are addressed.</div>
+        <div style="font-size:13px;font-weight:700;color:#F0F2F8;margin-bottom:3px">DEV-GEM2</div>
+        <div style="font-size:12px;font-weight:400;color:#A8B2C8;line-height:1.55">Shows positive sentiment and clear upsell interest, indicating potential for growth despite some emerging issues.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.08s">
       <div style="width:8px;height:8px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:5px"></div>
       <div>
-        <div style="font-size:13px;font-weight:700;color:var(--heading);margin-bottom:3px">DEV-DIONE</div>
-        <div style="font-size:12px;font-weight:400;color:var(--sub);line-height:1.55">DEV-DIONE, despite low engagement, has no reported pain points, suggesting a stable foundation for future growth.</div>
+        <div style="font-size:13px;font-weight:700;color:#F0F2F8;margin-bottom:3px">DEV-DIONE</div>
+        <div style="font-size:12px;font-weight:400;color:#A8B2C8;line-height:1.55">Exhibits a high engagement rate relative to scans and clear customer interest in comparing it to higher-tier products.</div>
       </div>
     </div>
       </div>
@@ -366,15 +257,15 @@
     <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0s">
       <div style="width:8px;height:8px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:5px"></div>
       <div>
-        <div style="font-size:13px;font-weight:700;color:var(--heading);margin-bottom:3px">DEV-PU108</div>
-        <div style="font-size:12px;font-weight:400;color:var(--sub);line-height:1.55">DEV-PU108 urgently requires attention due to the high volume of critical Bluetooth connectivity and pairing failures.</div>
+        <div style="font-size:13px;font-weight:700;color:#F0F2F8;margin-bottom:3px">DEV-PU108</div>
+        <div style="font-size:12px;font-weight:400;color:#A8B2C8;line-height:1.55">Has the highest volume of messages and a significant number of recurring connectivity complaints that require urgent resolution.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.08s">
       <div style="width:8px;height:8px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:5px"></div>
       <div>
-        <div style="font-size:13px;font-weight:700;color:var(--heading);margin-bottom:3px">DEV-GEM2</div>
-        <div style="font-size:12px;font-weight:400;color:var(--sub);line-height:1.55">DEV-GEM2 needs attention for emerging battery degradation and intermittent connectivity issues that impact user satisfaction.</div>
+        <div style="font-size:13px;font-weight:700;color:#F0F2F8;margin-bottom:3px">DEV-GEM2</div>
+        <div style="font-size:12px;font-weight:400;color:#A8B2C8;line-height:1.55">Reports of battery degradation and intermittent connectivity issues are concerning and could lead to declining customer satisfaction.</div>
       </div>
     </div>
       </div>
@@ -387,19 +278,19 @@
         
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0s">
       <div style="width:7px;height:7px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Persistent Bluetooth connectivity issues across products.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">High volume of DEV-PU108 connectivity issues impacting user experience.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.08s">
       <div style="width:7px;height:7px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Negative impact on customer satisfaction and brand reputation.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">DEV-GEM2's reported battery degradation could lead to customer dissatisfaction.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.16s">
       <div style="width:7px;height:7px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Increased support load due to technical troubleshooting.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Lack of explicit positive sentiment for high-volume products indicates potential for improvement.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.24s">
       <div style="width:7px;height:7px;border-radius:50%;background:#FF6B6B;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Potential for churn if issues are not resolved promptly.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Inefficient resolution of technical issues could escalate customer frustration.</span>
     </div>
       </div>
       <div class="card" style="flex:1">
@@ -407,19 +298,19 @@
         
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0s">
       <div style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Improve product reliability by fixing connectivity bugs.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Leverage pre-purchase comparison questions for targeted marketing and content creation.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.08s">
       <div style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Enhance user guides and in-app instructions for setup.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Address common post-purchase issues with proactive troubleshooting guides and support.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.16s">
       <div style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Proactive communication about known issues and fixes.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Capitalize on clear upsell signals to promote higher-tier products or complementary items.</span>
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;opacity:0;animation:fadeSlideIn 0.35s ease forwards;animation-delay:0.24s">
       <div style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0;margin-top:6px"></div>
-      <span style="font-size:13px;font-weight:400;color:var(--body);line-height:1.65">Convert frustrated customers into loyal advocates through effective resolution.</span>
+      <span style="font-size:13px;font-weight:400;color:#C0C6D8;line-height:1.65">Improve product documentation or in-app guidance for common setup and connectivity challenges.</span>
     </div>
       </div>
     </div>
@@ -433,7 +324,7 @@
             <tr>
               <th>Product</th>
               <th style="text-align:center">Scans</th>
-              <th style="text-align:center">Messages</th>
+              <th style="text-align:center">Eng. Rate</th>
               <th>Sentiment</th>
               <th style="text-align:center">AI Resolved</th>
               <th>Top Pain Point</th>
@@ -442,133 +333,133 @@
           </thead>
           <tbody>
             
-      <tr class="product-row" data-product-idx="0" onclick="showProductView(0)" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid var(--border)" onmouseover="this.style.background='var(--row-hover)'" onmouseout="this.style.background='transparent'">
+      <tr class="product-row" data-product-idx="0" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
             <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
-            <span style="font-weight:700;font-size:13px;color:var(--heading);letter-spacing:0.02em">DEV-DIONE</span>
+            <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">DEV-DIONE</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-weight:800;font-size:14px;color:#00D4B4">3</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:var(--body)">5</span>
+          <span style="font-weight:600;font-size:13px;color:#FF6B6B">167%</span>
         </td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:0%;background:#00D4B4;border-radius:3px"></div>
-            <div style="width:100%;background:var(--bar-bg);border-radius:3px"></div>
+            <div style="width:100%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
             <div style="width:0%;background:#FF6B6B;border-radius:3px"></div>
           </div>
           <div style="display:flex;gap:8px;margin-top:5px;font-size:10px;font-weight:700">
             <span style="color:#00D4B4">0%</span>
-            <span style="color:var(--muted)">100%</span>
+            <span style="color:#8892A8">100%</span>
             <span style="color:#FF6B6B">0%</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
+          <span style="font-weight:700;font-size:13px;color:#F5A623">95%</span>
         </td>
         <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:var(--body);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">—</span>
+          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No specific pain points were identified this week.</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
         </td>
       </tr>
-      <tr class="product-row" data-product-idx="1" onclick="showProductView(1)" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid var(--border)" onmouseover="this.style.background='var(--row-hover)'" onmouseout="this.style.background='transparent'">
+      <tr class="product-row" data-product-idx="1" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
             <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
-            <span style="font-weight:700;font-size:13px;color:var(--heading);letter-spacing:0.02em">DEV-GEM2</span>
+            <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">DEV-GEM2</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-weight:800;font-size:14px;color:#00D4B4">7</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:var(--body)">14</span>
+          <span style="font-weight:600;font-size:13px;color:#FF6B6B">200%</span>
         </td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:14%;background:#00D4B4;border-radius:3px"></div>
-            <div style="width:72%;background:var(--bar-bg);border-radius:3px"></div>
+            <div style="width:72%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
             <div style="width:14%;background:#FF6B6B;border-radius:3px"></div>
           </div>
           <div style="display:flex;gap:8px;margin-top:5px;font-size:10px;font-weight:700">
             <span style="color:#00D4B4">14%</span>
-            <span style="color:var(--muted)">72%</span>
+            <span style="color:#8892A8">72%</span>
             <span style="color:#FF6B6B">14%</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
+          <span style="font-weight:700;font-size:13px;color:#F5A623">95%</span>
         </td>
         <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:var(--body);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Battery degradation and intermittent Bluetooth connectivity are the primary pain points.</span>
+          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Battery life degradation and intermittent connectivity are the primary pain points.</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
         </td>
       </tr>
-      <tr class="product-row" data-product-idx="2" onclick="showProductView(2)" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid var(--border)" onmouseover="this.style.background='var(--row-hover)'" onmouseout="this.style.background='transparent'">
+      <tr class="product-row" data-product-idx="2" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
             <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
-            <span style="font-weight:700;font-size:13px;color:var(--heading);letter-spacing:0.02em">DEV-PU108</span>
+            <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">DEV-PU108</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-weight:800;font-size:14px;color:#00D4B4">25</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:var(--body)">76</span>
+          <span style="font-weight:600;font-size:13px;color:#FF6B6B">304%</span>
         </td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:0%;background:#00D4B4;border-radius:3px"></div>
-            <div style="width:87%;background:var(--bar-bg);border-radius:3px"></div>
+            <div style="width:87%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
             <div style="width:13%;background:#FF6B6B;border-radius:3px"></div>
           </div>
           <div style="display:flex;gap:8px;margin-top:5px;font-size:10px;font-weight:700">
             <span style="color:#00D4B4">0%</span>
-            <span style="color:var(--muted)">87%</span>
+            <span style="color:#8892A8">87%</span>
             <span style="color:#FF6B6B">13%</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
+          <span style="font-weight:700;font-size:13px;color:#F5A623">95%</span>
         </td>
         <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:var(--body);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Bluetooth connectivity and pairing failures are the overwhelming pain points for DEV-PU108 users.</span>
+          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Persistent Bluetooth connectivity and pairing failures are the most common issues.</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
         </td>
       </tr>
-      <tr class="product-row" data-product-idx="3" onclick="showProductView(3)" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid var(--border)" onmouseover="this.style.background='var(--row-hover)'" onmouseout="this.style.background='transparent'">
+      <tr class="product-row" data-product-idx="3" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
             <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
-            <span style="font-weight:700;font-size:13px;color:var(--heading);letter-spacing:0.02em">DEV-PU98</span>
+            <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">DEV-PU98</span>
           </div>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-weight:800;font-size:14px;color:#00D4B4">0</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:var(--body)">1</span>
+          <span style="font-weight:600;font-size:13px;color:#FF6B6B">0%</span>
         </td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:0%;background:#00D4B4;border-radius:3px"></div>
-            <div style="width:100%;background:var(--bar-bg);border-radius:3px"></div>
+            <div style="width:100%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
             <div style="width:0%;background:#FF6B6B;border-radius:3px"></div>
           </div>
           <div style="display:flex;gap:8px;margin-top:5px;font-size:10px;font-weight:700">
             <span style="color:#00D4B4">0%</span>
-            <span style="color:var(--muted)">100%</span>
+            <span style="color:#8892A8">100%</span>
             <span style="color:#FF6B6B">0%</span>
           </div>
         </td>
@@ -576,7 +467,7 @@
           <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
         </td>
         <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:var(--body);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">—</span>
+          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No pain points were identified from the single customer interaction.</span>
         </td>
         <td style="padding:15px 16px;text-align:center">
           <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
@@ -588,9 +479,9 @@
     </div>
 
     <!-- FOOTER -->
-    <div style="padding-top:1.5rem;margin-top:0.5rem;border-top:1px solid var(--border-light);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <span>SQU Intelligence</span>
-      <span style="opacity:0.5">GENERATED 2026-04-14</span>
+    <div style="padding-top:1.5rem;margin-top:0.5rem;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
+      <span>SQU-AI Intelligence v5.1</span>
+      <span style="color:#3D4558">INTERNAL USE ONLY · SECURE DEPLOYMENT</span>
     </div>
   </div>
 
@@ -601,50 +492,50 @@
 
     <div class="section-gap">
       <div class="filter-bar" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px">
-        <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')" style="font-size:12px;font-weight:700;padding:8px 18px;border-radius:10px;border:1px solid rgba(0,212,180,0.35);background:rgba(0,212,180,0.12);color:#00D4B4;cursor:pointer;transition:all 0.2s ease;white-space:nowrap">All Products</button><button class="filter-btn" data-filter="0" onclick="filterProducts(0)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--body);cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-DIONE</button><button class="filter-btn" data-filter="1" onclick="filterProducts(1)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--body);cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-GEM2</button><button class="filter-btn" data-filter="2" onclick="filterProducts(2)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--body);cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-PU108</button><button class="filter-btn" data-filter="3" onclick="filterProducts(3)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--body);cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-PU98</button>
+        <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')" style="font-size:12px;font-weight:700;padding:8px 18px;border-radius:10px;border:1px solid rgba(0,212,180,0.35);background:rgba(0,212,180,0.12);color:#00D4B4;cursor:pointer;transition:all 0.2s ease;white-space:nowrap">All Products</button><button class="filter-btn" data-filter="0" onclick="filterProducts(0)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-DIONE</button><button class="filter-btn" data-filter="1" onclick="filterProducts(1)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-GEM2</button><button class="filter-btn" data-filter="2" onclick="filterProducts(2)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-PU108</button><button class="filter-btn" data-filter="3" onclick="filterProducts(3)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>DEV-PU98</button>
       </div>
     </div>
 
     <div id="product-cards-container">
       
       <div class="product-detail-card" data-product-idx="0" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.25rem 2.5rem;transition:background 0.3s,border-color 0.3s">
+        <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
 
           <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:var(--heading)">DEV-DIONE</span>
+                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">DEV-DIONE</span>
                 <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
-              <div style="display:flex;gap:1.5rem;font-size:13px;color:var(--sub);flex-wrap:wrap">
+              <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">3</strong></span>
-                <span>Messages <strong style="color:var(--body);font-weight:700">5</strong></span>
-                <span>Pre-purchase <strong style="color:var(--body);font-weight:700">3</strong></span>
-                <span>Post-purchase <strong style="color:var(--body);font-weight:700">2</strong></span>
-                <span>AI resolved <strong style="color:#F5A623;font-weight:800">100%</strong></span>
+                <span>Engagement <strong style="color:#FF6B6B;font-weight:700">167%</strong></span>
+                <span>Pre-purchase <strong style="color:#C0C6D8;font-weight:700">3</strong></span>
+                <span>Post-purchase <strong style="color:#C0C6D8;font-weight:700">2</strong></span>
+                <span>AI resolved <strong style="color:#F5A623;font-weight:800">95%</strong></span>
               </div>
             </div>
             <div style="text-align:right">
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">upsell</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">upsell</div>
             </div>
           </div>
 
-          <div style="font-size:13px;color:var(--body);font-style:italic;margin:10px 0 4px;line-height:1.6">The product is under watch due to a lack of explicit positive feedback, despite having no reported pain points or unanswered questions.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">While there are no pain points or unanswered questions, the product lacks explicit positive sentiment and does not meet the healthy threshold.</div>
 
           <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:0%;background:#00D4B4;border-radius:4px"></div>
-              <div style="width:100%;background:var(--bar-bg);border-radius:4px"></div>
+              <div style="width:100%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
               <div style="width:0%;background:#FF6B6B;border-radius:4px"></div>
             </div>
             <div style="display:flex;gap:1.5rem;margin-top:9px;font-size:12px;font-weight:700">
               <span style="color:#00D4B4">▲ 0% positive</span>
-              <span style="color:var(--muted)">● 100% neutral</span>
+              <span style="color:#8892A8">● 100% neutral</span>
               <span style="color:#FF6B6B">▼ 0% negative</span>
             </div>
-            <div style="font-size:12.5px;color:var(--body);margin-top:9px;line-height:1.65">DEV-DIONE interactions are primarily neutral inquiries about product comparisons and versatility, with no expressed emotion.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Customer interactions are entirely neutral, focusing on pre-purchase comparisons and general inquiries.</div>
           </div>
 
           <!-- Two-column: Pain Points | Unanswered -->
@@ -654,247 +545,276 @@
             
           </div>
 
+          <!-- Upsell Signals -->
+          
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
+            
+              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
+                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
+                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">A customer asked for advice on choosing between Dione, Phantom 98, or 108 for movies, indicating interest in higher-tier options.</span>
+              </div>
+          </div>
+
           <!-- Marketing Signals -->
           
-          <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--sub);margin-bottom:14px">Marketing Signals</div>
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Comparison guides with Phantom 98/108</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Versatility features for movies and music</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• App setup guides</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create comparison content highlighting Dione's versatility for both movies and music.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop content comparing Dione to Phantom 98 and 108 models.</div>
               </div>
             </div>
           </div>
 
           
-          <div style="margin-top:18px;font-size:13px;color:var(--body);line-height:1.75;padding-top:16px;border-top:1px solid var(--border)">
-            DEV-DIONE interactions are primarily neutral inquiries about product comparisons and versatility, with no reported issues.
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
+            DEV-DIONE saw neutral engagement this week, primarily driven by pre-purchase comparisons and general questions.
           </div>
 
           
           <div style="margin-top:14px;padding:14px 16px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:12px">
             <div style="font-size:11px;font-weight:700;color:#F5A623;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px">AI Improvement</div>
-            <div style="font-size:13px;color:var(--body);line-height:1.65">Focus on identifying opportunities to elicit positive feedback or upsell.</div>
+            <div style="font-size:13px;color:#C0C6D8;line-height:1.65">Focus on identifying opportunities to convert neutral inquiries into positive experiences or upsell opportunities.</div>
           </div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="1" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.25rem 2.5rem;transition:background 0.3s,border-color 0.3s">
+        <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
 
           <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:var(--heading)">DEV-GEM2</span>
+                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">DEV-GEM2</span>
                 <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
-              <div style="display:flex;gap:1.5rem;font-size:13px;color:var(--sub);flex-wrap:wrap">
+              <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">7</strong></span>
-                <span>Messages <strong style="color:var(--body);font-weight:700">14</strong></span>
-                <span>Pre-purchase <strong style="color:var(--body);font-weight:700">7</strong></span>
-                <span>Post-purchase <strong style="color:var(--body);font-weight:700">7</strong></span>
-                <span>AI resolved <strong style="color:#F5A623;font-weight:800">100%</strong></span>
+                <span>Engagement <strong style="color:#FF6B6B;font-weight:700">200%</strong></span>
+                <span>Pre-purchase <strong style="color:#C0C6D8;font-weight:700">7</strong></span>
+                <span>Post-purchase <strong style="color:#C0C6D8;font-weight:700">7</strong></span>
+                <span>AI resolved <strong style="color:#F5A623;font-weight:800">95%</strong></span>
               </div>
             </div>
             <div style="text-align:right">
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">upsell</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">complaint</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">upsell</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">complaint</div>
             </div>
           </div>
 
-          <div style="font-size:13px;color:var(--body);font-style:italic;margin:10px 0 4px;line-height:1.6">DEV-GEM2 is under watch due to moderate positive sentiment and emerging pain points related to battery life and connectivity.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">The product shows mixed sentiment with positive feedback balanced by concerning reports of battery degradation and connectivity issues.</div>
 
           <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:14%;background:#00D4B4;border-radius:4px"></div>
-              <div style="width:72%;background:var(--bar-bg);border-radius:4px"></div>
+              <div style="width:72%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
               <div style="width:14%;background:#FF6B6B;border-radius:4px"></div>
             </div>
             <div style="display:flex;gap:1.5rem;margin-top:9px;font-size:12px;font-weight:700">
               <span style="color:#00D4B4">▲ 14% positive</span>
-              <span style="color:var(--muted)">● 72% neutral</span>
+              <span style="color:#8892A8">● 72% neutral</span>
               <span style="color:#FF6B6B">▼ 14% negative</span>
             </div>
-            <div style="font-size:12.5px;color:var(--body);margin-top:9px;line-height:1.65">Sentiment for DEV-GEM2 is driven by positive feedback on ANC and overall satisfaction, balanced by concerns over battery life and connectivity.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Sentiment is mixed, with positive feedback on ANC and overall product love balanced by concerns about battery life and connectivity.</div>
           </div>
 
           <!-- Two-column: Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
-            <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid var(--border)">
+            <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
                 <span style="font-size:11px;font-weight:700;padding:5px 12px;border-radius:7px;background:rgba(255,107,107,0.12);color:#FF6B6B;text-transform:uppercase;letter-spacing:0.1em">2 pain points</span>
               </div>
-              <div style="font-size:13px;color:var(--body);margin-bottom:10px;line-height:1.65">Battery degradation and intermittent Bluetooth connectivity are the primary pain points.</div>
+              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Battery life degradation and intermittent connectivity are the primary pain points.</div>
               <div style="line-height:1.8"><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">ok, ive had them for a while and battery is quite bad now... like 2hours maybe?</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">i need help for my gemini, sometimes it doesnt connect</span></div>
-              <div style="font-size:12px;color:var(--sub);margin-top:8px;font-style:italic">These issues directly impact long-term user satisfaction and product reliability.</div>
+              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">These issues directly impact user experience and could lead to decreased satisfaction and potential returns.</div>
             </div>
 
             
           </div>
 
+          <!-- Upsell Signals -->
+          
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
+            
+              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
+                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
+                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">A customer asked if there were 'any other product i should take a look at?', indicating interest in additional purchases.</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
+                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
+                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">A satisfied Gemini owner asked for recommendations for 'another product', signaling a cross-sell opportunity.</span>
+              </div>
+          </div>
+
           <!-- Marketing Signals -->
           
-          <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--sub);margin-bottom:14px">Marketing Signals</div>
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#00D4B4;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Customers Love</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• ANC (Active Noise Cancellation) performance</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Overall product satisfaction</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• ANC (Active Noise Cancellation)</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Overall product satisfaction</div>
               </div>
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Battery life degradation</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Intermittent Bluetooth connection</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Battery life degradation</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Intermittent connectivity</div>
               </div>
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Battery care and longevity tips</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Troubleshooting guides for connectivity</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• App usage benefits</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create content on optimizing battery life and troubleshooting connectivity for Gemini.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop cross-sell content recommending complementary products to existing Gemini owners.</div>
               </div>
             </div>
           </div>
 
           
-          <div style="margin-top:18px;font-size:13px;color:var(--body);line-height:1.75;padding-top:16px;border-top:1px solid var(--border)">
-            DEV-GEM2 shows a mix of positive feedback on ANC and love for the product, alongside concerns about battery life and connectivity.
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
+            DEV-GEM2 exhibits mixed sentiment with positive remarks on ANC but notable complaints regarding battery life and connectivity.
           </div>
 
           
           <div style="margin-top:14px;padding:14px 16px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:12px">
             <div style="font-size:11px;font-weight:700;color:#F5A623;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px">AI Improvement</div>
-            <div style="font-size:13px;color:var(--body);line-height:1.65">Enhance AI's ability to diagnose and troubleshoot battery and connectivity issues.</div>
+            <div style="font-size:13px;color:#C0C6D8;line-height:1.65">Improve AI's ability to diagnose and offer solutions for battery and connectivity issues, potentially linking to advanced troubleshooting guides.</div>
           </div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="2" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.25rem 2.5rem;transition:background 0.3s,border-color 0.3s">
+        <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
 
           <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:var(--heading)">DEV-PU108</span>
+                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">DEV-PU108</span>
                 <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
-              <div style="display:flex;gap:1.5rem;font-size:13px;color:var(--sub);flex-wrap:wrap">
+              <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">25</strong></span>
-                <span>Messages <strong style="color:var(--body);font-weight:700">76</strong></span>
-                <span>Pre-purchase <strong style="color:var(--body);font-weight:700">33</strong></span>
-                <span>Post-purchase <strong style="color:var(--body);font-weight:700">43</strong></span>
-                <span>AI resolved <strong style="color:#F5A623;font-weight:800">100%</strong></span>
+                <span>Engagement <strong style="color:#FF6B6B;font-weight:700">304%</strong></span>
+                <span>Pre-purchase <strong style="color:#C0C6D8;font-weight:700">33</strong></span>
+                <span>Post-purchase <strong style="color:#C0C6D8;font-weight:700">43</strong></span>
+                <span>AI resolved <strong style="color:#F5A623;font-weight:800">95%</strong></span>
               </div>
             </div>
             <div style="text-align:right">
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">upsell</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">complaint</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">general</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">upsell</div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">complaint</div>
             </div>
           </div>
 
-          <div style="font-size:13px;color:var(--body);font-style:italic;margin:10px 0 4px;line-height:1.6">DEV-PU108 is under watch due to a significant volume of connectivity-related pain points, despite no explicit positive feedback.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">Despite a high volume of conversations, the product's sentiment is predominantly neutral with a significant portion of messages dedicated to connectivity pain points.</div>
 
           <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:0%;background:#00D4B4;border-radius:4px"></div>
-              <div style="width:87%;background:var(--bar-bg);border-radius:4px"></div>
+              <div style="width:87%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
               <div style="width:13%;background:#FF6B6B;border-radius:4px"></div>
             </div>
             <div style="display:flex;gap:1.5rem;margin-top:9px;font-size:12px;font-weight:700">
               <span style="color:#00D4B4">▲ 0% positive</span>
-              <span style="color:var(--muted)">● 87% neutral</span>
+              <span style="color:#8892A8">● 87% neutral</span>
               <span style="color:#FF6B6B">▼ 13% negative</span>
             </div>
-            <div style="font-size:12.5px;color:var(--body);margin-top:9px;line-height:1.65">Sentiment for DEV-PU108 is heavily influenced by negative experiences with Bluetooth connectivity and pairing, with no explicit positive feedback.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Customer sentiment is largely neutral with a significant portion expressing frustration over persistent connectivity and pairing issues.</div>
           </div>
 
           <!-- Two-column: Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
-            <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid var(--border)">
+            <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
                 <span style="font-size:11px;font-weight:700;padding:5px 12px;border-radius:7px;background:rgba(255,107,107,0.12);color:#FF6B6B;text-transform:uppercase;letter-spacing:0.1em">10 pain points</span>
               </div>
-              <div style="font-size:13px;color:var(--body);margin-bottom:10px;line-height:1.65">Bluetooth connectivity and pairing failures are the overwhelming pain points for DEV-PU108 users.</div>
+              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Persistent Bluetooth connectivity and pairing failures are the most common issues.</div>
               <div style="line-height:1.8"><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">yes, ive got an issue with my 108... i cant connect it in bluetooth</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">i think we were cut</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">not pairing up</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">yes i tried turning off the speaker, my phone too...</span></div>
-              <div style="font-size:12px;color:var(--sub);margin-top:8px;font-style:italic">These persistent connectivity issues severely hinder the user experience and generate significant support inquiries.</div>
+              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">These issues create significant frustration for users, leading to repeated support interactions and potential negative reviews.</div>
             </div>
 
             
           </div>
 
+          <!-- Upsell Signals -->
+          
+
           <!-- Marketing Signals -->
           
-          <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--sub);margin-bottom:14px">Marketing Signals</div>
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Bluetooth connectivity failures</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Pairing difficulties</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Bluetooth connectivity issues</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Pairing failures</div>
               </div>
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Comprehensive Bluetooth troubleshooting guides</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Step-by-step pairing video tutorials</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Firmware update instructions for connectivity fixes</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create detailed troubleshooting guides and video tutorials for PU108 Bluetooth pairing.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Address common connectivity issues in FAQ sections and product support pages.</div>
               </div>
             </div>
           </div>
 
           
-          <div style="margin-top:18px;font-size:13px;color:var(--body);line-height:1.75;padding-top:16px;border-top:1px solid var(--border)">
-            DEV-PU108 interactions are dominated by troubleshooting requests related to Bluetooth connectivity and pairing issues.
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
+            DEV-PU108 experienced high engagement, but a notable portion of conversations centered on frustrating Bluetooth connectivity problems.
           </div>
 
           
           <div style="margin-top:14px;padding:14px 16px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:12px">
             <div style="font-size:11px;font-weight:700;color:#F5A623;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px">AI Improvement</div>
-            <div style="font-size:13px;color:var(--body);line-height:1.65">Develop more robust AI troubleshooting flows specifically for Bluetooth pairing issues.</div>
+            <div style="font-size:13px;color:#C0C6D8;line-height:1.65">Develop more robust AI troubleshooting flows for Bluetooth connectivity and pairing issues, potentially integrating with device-specific guides.</div>
           </div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="3" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.25rem 2.5rem;transition:background 0.3s,border-color 0.3s">
+        <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
 
           <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:var(--heading)">DEV-PU98</span>
+                <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">DEV-PU98</span>
                 <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
-              <div style="display:flex;gap:1.5rem;font-size:13px;color:var(--sub);flex-wrap:wrap">
+              <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">0</strong></span>
-                <span>Messages <strong style="color:var(--body);font-weight:700">1</strong></span>
-                <span>Pre-purchase <strong style="color:var(--body);font-weight:700">1</strong></span>
-                <span>Post-purchase <strong style="color:var(--body);font-weight:700">0</strong></span>
+                <span>Engagement <strong style="color:#FF6B6B;font-weight:700">0%</strong></span>
+                <span>Pre-purchase <strong style="color:#C0C6D8;font-weight:700">1</strong></span>
+                <span>Post-purchase <strong style="color:#C0C6D8;font-weight:700">0</strong></span>
                 <span>AI resolved <strong style="color:#F5A623;font-weight:800">100%</strong></span>
               </div>
             </div>
             <div style="text-align:right">
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sub);margin-bottom:4px">general</div>
+              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#A8B2C8;margin-bottom:4px">general</div>
             </div>
           </div>
 
-          <div style="font-size:13px;color:var(--body);font-style:italic;margin:10px 0 4px;line-height:1.6">DEV-PU98 is under watch due to extremely low engagement and no explicit positive feedback, though it has no reported issues.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">With only one neutral message, there is insufficient data to determine a 'healthy' status, but no negative signals were present.</div>
 
           <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:0%;background:#00D4B4;border-radius:4px"></div>
-              <div style="width:100%;background:var(--bar-bg);border-radius:4px"></div>
+              <div style="width:100%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
               <div style="width:0%;background:#FF6B6B;border-radius:4px"></div>
             </div>
             <div style="display:flex;gap:1.5rem;margin-top:9px;font-size:12px;font-weight:700">
               <span style="color:#00D4B4">▲ 0% positive</span>
-              <span style="color:var(--muted)">● 100% neutral</span>
+              <span style="color:#8892A8">● 100% neutral</span>
               <span style="color:#FF6B6B">▼ 0% negative</span>
             </div>
-            <div style="font-size:12.5px;color:var(--body);margin-top:9px;line-height:1.65">DEV-PU98 sentiment is entirely neutral, based on a single pre-purchase comparison question.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">The single customer interaction is a neutral pre-purchase inquiry comparing models.</div>
           </div>
 
           <!-- Two-column: Pain Points | Unanswered -->
@@ -904,60 +824,55 @@
             
           </div>
 
+          <!-- Upsell Signals -->
+          
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
+            
+              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
+                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
+                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">A customer asked to know the 'difference between 108 and 98', indicating a potential upsell opportunity to the higher-tier 108 model.</span>
+              </div>
+          </div>
+
           <!-- Marketing Signals -->
           
-          <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--sub);margin-bottom:14px">Marketing Signals</div>
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               
               
               <div style="flex:1;min-width:160px">
                 <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Detailed comparison content between PU108 and PU98</div><div style="font-size:12.5px;color:var(--body);margin-bottom:7px;line-height:1.55">• Highlighting unique selling points of PU98</div>
+                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop clear comparison content highlighting the differences between PU108 and PU98.</div>
               </div>
             </div>
           </div>
 
           
-          <div style="margin-top:18px;font-size:13px;color:var(--body);line-height:1.75;padding-top:16px;border-top:1px solid var(--border)">
-            DEV-PU98 had minimal interaction, limited to a single pre-purchase comparison question.
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
+            DEV-PU98 had minimal engagement, with a single neutral inquiry comparing it to the PU108 model.
           </div>
 
           
           <div style="margin-top:14px;padding:14px 16px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.15);border-radius:12px">
             <div style="font-size:11px;font-weight:700;color:#F5A623;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px">AI Improvement</div>
-            <div style="font-size:13px;color:var(--body);line-height:1.65">Focus on increasing engagement and providing comparative product information.</div>
+            <div style="font-size:13px;color:#C0C6D8;line-height:1.65">Ensure AI can effectively differentiate and explain product features when customers compare models.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div style="padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid var(--border-light);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <span>SQU Intelligence</span>
-      <span style="opacity:0.5">GENERATED 2026-04-14</span>
+    <div style="padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
+      <span>SQU-AI Intelligence v5.1</span>
+      <span style="color:#3D4558">INTERNAL USE ONLY · SECURE DEPLOYMENT</span>
     </div>
   </div>
 
 </div>
 
 <script>
-  function toggleTheme() {
-    var html = document.documentElement;
-    var current = html.getAttribute('data-theme');
-    var next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    try { localStorage.setItem('squ-theme', next); } catch(e) {}
-  }
-
-  // Restore saved theme on load
-  (function() {
-    try {
-      var saved = localStorage.getItem('squ-theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    } catch(e) {}
-  })();
-
   function showDashboard() {
     document.getElementById('product-view').classList.add('hidden');
     document.getElementById('dashboard-view').classList.remove('hidden');
@@ -969,8 +884,8 @@
     document.getElementById('product-view').classList.remove('hidden');
     if (idx != null) {
       filterProducts(idx);
-      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-      var target = document.querySelector('.filter-btn[data-filter="' + idx + '"]');
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      const target = document.querySelector('.filter-btn[data-filter="' + idx + '"]');
       if (target) target.classList.add('active');
     } else {
       filterProducts('all');
@@ -979,12 +894,12 @@
   }
 
   function filterProducts(filter) {
-    var cards = document.querySelectorAll('.product-detail-card');
-    document.querySelectorAll('.filter-btn').forEach(function(b) {
+    const cards = document.querySelectorAll('.product-detail-card');
+    document.querySelectorAll('.filter-btn').forEach(b => {
       b.classList.toggle('active', b.getAttribute('data-filter') === String(filter));
     });
-    cards.forEach(function(card) {
-      var idx = card.getAttribute('data-product-idx');
+    cards.forEach(card => {
+      const idx = card.getAttribute('data-product-idx');
       if (filter === 'all' || String(filter) === idx) {
         card.style.display = 'block';
         card.style.marginBottom = '1.25rem';
@@ -996,6 +911,13 @@
       }
     });
   }
+
+  document.querySelectorAll('.product-row').forEach(row => {
+    row.addEventListener('click', function() {
+      const idx = parseInt(this.getAttribute('data-product-idx'));
+      showProductView(idx);
+    });
+  });
 </script>
 </body>
 </html>
