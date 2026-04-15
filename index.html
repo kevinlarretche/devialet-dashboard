@@ -1,27 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>SQU Intelligence Summary</title>
 <style>
-  @keyframes fadeSlideIn {
-    from { opacity:0; transform:translateY(8px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
-  @keyframes pulseGlow {
-    0%,100% { opacity:0.7; }
-    50%     { opacity:1; }
-  }
+  @keyframes fadeSlideIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulseGlow { 0%,100% { opacity:0.7; } 50% { opacity:1; } }
   *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#0E1117;
-    color:#F0F2F8;
-    font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
-    font-size:14px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
+  body { background:#0E1117; color:#F0F2F8; font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif; font-size:14px; line-height:1.55; -webkit-font-smoothing:antialiased; }
   .wrap { max-width:1400px; margin:0 auto; padding:2.5rem 2rem; }
   .card { background:#1A2030; border:1px solid rgba(255,255,255,0.18); border-radius:18px; padding:1.6rem 1.85rem; }
   .section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:#A8B2C8; display:block; margin-bottom:1.15rem; }
@@ -34,23 +19,14 @@
   .filter-btn.active { background:rgba(0,212,180,0.12) !important; border-color:rgba(0,212,180,0.35) !important; color:#00D4B4 !important; }
   .back-btn { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:#00D4B4; cursor:pointer; padding:8px 18px; border-radius:10px; border:1px solid rgba(0,212,180,0.25); background:rgba(0,212,180,0.06); transition:all 0.2s ease; margin-bottom:1.25rem; }
   .back-btn:hover { background:rgba(0,212,180,0.12); border-color:rgba(0,212,180,0.4); }
-  @media(max-width:900px) {
-    .row-header { flex-direction:column !important; }
-    .row-2col   { flex-direction:column !important; }
-    .score-cards { flex-wrap:wrap !important; }
-    .action-grid { grid-template-columns:1fr !important; }
-    .wrap { padding:1.25rem; }
-    .filter-bar { flex-wrap:wrap !important; }
-  }
+  @media(max-width:900px) { .row-header { flex-direction:column !important; } .row-2col { flex-direction:column !important; } .score-cards { flex-wrap:wrap !important; } .action-grid { grid-template-columns:1fr !important; } .wrap { padding:1.25rem; } .filter-bar { flex-wrap:wrap !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- DASHBOARD VIEW -->
   <div id="dashboard-view" class="view">
 
-    <!-- ROW 1: HEADER + KPI CARDS -->
     <div class="row-header section-gap" style="display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap">
       <div style="flex-shrink:0">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
@@ -101,41 +77,36 @@
       <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#A78BFA;opacity:0.85"></div>
       <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Sentiment Score</div>
       <div style="font-size:2rem;font-weight:800;color:#A78BFA;line-height:1;letter-spacing:-0.02em">
-        78<span style="font-size:14px;color:#8892A8;margin-left:3px;font-weight:500">%</span>
+        18<span style="font-size:14px;color:#8892A8;margin-left:3px;font-weight:500">%</span>
       </div>
       
-      <div style="font-size:10px;color:#8892A8;margin-top:5px;letter-spacing:0.04em">64 opinionated msgs</div>
+      <div style="font-size:10px;color:#8892A8;margin-top:5px;letter-spacing:0.04em">17 opinionated msgs</div>
     </div>
         
     <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.25rem 1.5rem;flex:1;min-width:130px;position:relative">
       <div style="position:absolute;top:14px;right:14px;width:6px;height:6px;border-radius:2px;background:#F5A623;opacity:0.85"></div>
-      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Upsell Signals</div>
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:10px">Buy Intent</div>
       <div style="font-size:2rem;font-weight:800;color:#F5A623;line-height:1;letter-spacing:-0.02em">
         2
       </div>
       
-      <div style="font-size:10px;color:#8892A8;margin-top:5px;letter-spacing:0.04em">67% card CTR</div>
+      <div style="font-size:10px;color:#8892A8;margin-top:5px;letter-spacing:0.04em">67% CTR · 3 shown</div>
     </div>
       </div>
     </div>
 
-    <!-- ROW 2: BIGGEST CHANGE -->
     
     <div class="section-gap" style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:16px;padding:1.5rem 1.75rem">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px">
         <div style="font-size:18px;line-height:1;flex-shrink:0;margin-top:2px">⚡</div>
         <div>
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#00D4B4;margin-bottom:7px">This Week's Biggest Change</div>
-          <div style="font-size:15px;font-weight:600;color:#F0F2F8;line-height:1.65">The most significant shift this week is the emergence of critical battery and connectivity issues for Devialet Gemini II, impacting 24% of user messages.</div>
+          <div style="font-size:15px;font-weight:600;color:#F0F2F8;line-height:1.65">No significant week-over-week changes in messages or conversations were observed, with all delta metrics remaining at 0.</div>
         </div>
       </div>
-      
-      <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:14px;padding-left:32px">
-        <p style="font-size:13.5px;color:#C0C6D8;line-height:1.8">Overall sentiment remains strong with a score of 86 and 100% resolution, but Devialet Gemini II faces critical battery and connectivity issues affecting 24% of its messages. There's a significant opportunity to upsell Dione and Phantom Ultimate 98 dB customers to higher-tier Phantom models, with 5 distinct upsell signals identified this week.</p>
-      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:14px;padding-left:32px"><p style="font-size:13.5px;color:#C0C6D8;line-height:1.8">This week's customer interactions show stable engagement with an overall sentiment score of 86%. While the overall resolution rate is 100%, the Devialet Gemini II exhibits a concerning 24% negative sentiment driven by battery and connectivity issues. A key opportunity lies in leveraging numerous upsell signals, especially for Phantom Ultimate 98 dB and Devialet Dione, to guide customers towards higher-tier products or accessories.</p></div>
     </div>
 
-    <!-- ROW 3: PRE/POST PURCHASE + UPSELL REVENUE -->
     <div class="section-gap" style="display:flex;gap:1rem;flex-wrap:wrap">
       <div style="flex:1;min-width:160px;background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.25rem 1.5rem;text-align:center">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:8px">Pre-Purchase</div>
@@ -148,57 +119,55 @@
         <div style="font-size:11px;color:#8892A8;margin-top:5px">questions after buying</div>
       </div>
       <div style="flex:1;min-width:160px;background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.25rem 1.5rem;text-align:center">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:8px">Est. Upsell Value</div>
-        <div style="font-size:1.4rem;font-weight:800;color:#F472B6;line-height:1.2">€1,000–€5,000 potential</div>
-        <div style="font-size:11px;color:#8892A8;margin-top:5px">this week's signals</div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;margin-bottom:8px">Est. Revenue Potential</div>
+        <div style="font-size:1.6rem;font-weight:800;color:#F472B6;line-height:1.2">€0</div>
+        <div style="font-size:11px;color:#8892A8;margin-top:5px">clicks × price × 10% conversion</div>
       </div>
     </div>
 
-    <!-- ROW 4: ACTIONS -->
     <div class="section-gap">
       <span class="section-label">Prioritized Actions</span>
       <div class="action-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.85rem">
         
       <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#FF6B6B"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Investigate and address the root causes of Devialet Gemini II battery degradation, charging failures, and connectivity issues.</div>
-        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">These critical issues are significantly impacting user experience and brand perception for a key portable product.</div>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Develop and disseminate comprehensive troubleshooting guides for Devialet Gemini II battery, charging, and connectivity issues.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Addressing these pain points directly impacts 24% of Gemini II messages, improving customer satisfaction and reducing support load.</div>
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.12);color:#FF6B6B">high</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.1);color:#F5A623">product</span>
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(167,139,250,0.1);color:#A78BFA">support</span>
         </div>
       </div>
       <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.06s">
-        <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#F5A623"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Develop and promote comparison content highlighting the differences between Devialet Dione and Phantom Ultimate, and Phantom Ultimate 98 dB vs. 108 dB.</div>
-        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Customers are actively seeking this information, presenting clear upsell opportunities.</div>
-        <div style="display:flex;align-items:center;gap:6px">
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium</span>
-          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(244,114,182,0.1);color:#F472B6">marketing</span>
-        </div>
-      </div>
-      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.12s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#FF6B6B"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Create comprehensive troubleshooting guides and FAQs for Devialet Gemini II battery, charging, and connectivity, and for Phantom Ultimate 108 dB Bluetooth pairing.</div>
-        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Proactive content can resolve common pain points and reduce support load.</div>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Create detailed support content and AI responses for Phantom Ultimate 108 dB Bluetooth and general connectivity problems.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Connectivity issues account for 13% of PU108 messages, causing significant customer frustration and requiring immediate resolution.</div>
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.12);color:#FF6B6B">high</span>
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(0,212,180,0.1);color:#00D4B4">content</span>
         </div>
       </div>
-      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.18s">
+      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.12s">
         <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#FF6B6B"></div>
-        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Implement a strategy to proactively engage with customers exhibiting upsell signals for higher-tier Phantom products.</div>
-        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Identified upsell signals represent direct revenue opportunities.</div>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Produce marketing content (e.g., comparison charts, blog posts) highlighting the benefits and differences between Phantom Ultimate 98 dB and 108 dB, and Dione vs. Phantom series.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">Multiple upsell signals indicate strong customer interest in higher-tier products, presenting a direct revenue opportunity.</div>
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(255,107,107,0.12);color:#FF6B6B">high</span>
           <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(244,114,182,0.1);color:#F472B6">marketing</span>
         </div>
       </div>
+      <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:1.35rem 1.5rem;position:relative;opacity:0;animation:fadeSlideIn 0.4s ease forwards;animation-delay:0.18s">
+        <div style="position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:#F5A623"></div>
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:7px;color:#F0F2F8;line-height:1.5;padding-right:20px">Enhance AI's ability to proactively offer solutions for common post-purchase issues like app usage and updates for Gemini II and Phantom Ultimate 108 dB.</div>
+        <div style="font-size:12.5px;color:#C0C6D8;line-height:1.65;margin-bottom:12px">These questions are frequent and can be easily resolved by improved AI responses, reducing manual support needs.</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.12);color:#F5A623">medium</span>
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:rgba(245,166,35,0.1);color:#F5A623">product</span>
+        </div>
+      </div>
       </div>
     </div>
 
-    <!-- ROW 5: TOP QUESTIONS -->
     
     <div class="section-gap">
       <span class="section-label">Top Questions This Week</span>
@@ -207,29 +176,29 @@
           <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);padding-top:0">
             <div style="font-size:20px;font-weight:800;color:#2A3245;min-width:28px;line-height:1.4">1</div>
             <div style="flex:1">
-              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"i cant connect it in bluetooth"</div>
+              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"How do I resolve connectivity or pairing issues with my Devialet device?"</div>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <span style="font-size:11px;color:#8892A8;font-weight:600">4x asked</span>
-                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 108 dB</span>
+                <span style="font-size:11px;color:#8892A8;font-weight:600">11x asked</span>
+                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 108 dB</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span>
               </div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
             <div style="font-size:20px;font-weight:800;color:#2A3245;min-width:28px;line-height:1.4">2</div>
             <div style="flex:1">
-              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"ok, ive had them for a while and battery is quite bad now... like 2hours maybe?"</div>
+              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"What are the differences between Devialet products or which do you recommend?"</div>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <span style="font-size:11px;color:#8892A8;font-weight:600">4x asked</span>
-                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span>
+                <span style="font-size:11px;color:#8892A8;font-weight:600">10x asked</span>
+                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Dione</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 98 dB</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 108 dB</span>
               </div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
             <div style="font-size:20px;font-weight:800;color:#2A3245;min-width:28px;line-height:1.4">3</div>
             <div style="flex:1">
-              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"any other product i should take a look at?"</div>
+              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"What should I do if my Devialet Gemini II has battery or charging problems?"</div>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <span style="font-size:11px;color:#8892A8;font-weight:600">2x asked</span>
+                <span style="font-size:11px;color:#8892A8;font-weight:600">3x asked</span>
                 <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span>
               </div>
             </div>
@@ -237,27 +206,26 @@
           <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
             <div style="font-size:20px;font-weight:800;color:#2A3245;min-width:28px;line-height:1.4">4</div>
             <div style="flex:1">
-              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"for movies, would you consider a dione or a phantom 98. or 108?"</div>
+              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"Is the Devialet app required for full functionality or how do I update my device?"</div>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <span style="font-size:11px;color:#8892A8;font-weight:600">1x asked</span>
-                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Dione</span>
+                <span style="font-size:11px;color:#8892A8;font-weight:600">3x asked</span>
+                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 108 dB</span>
               </div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);border-bottom:none;padding-bottom:0">
             <div style="font-size:20px;font-weight:800;color:#2A3245;min-width:28px;line-height:1.4">5</div>
             <div style="flex:1">
-              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"id like to know the difference between 108 and 98"</div>
+              <div style="font-size:13.5px;font-weight:600;color:#F0F2F8;line-height:1.5;margin-bottom:6px">"Can you provide general information about a Devialet product or answer pre-purchase questions?"</div>
               <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <span style="font-size:11px;color:#8892A8;font-weight:600">1x asked</span>
-                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 98 dB</span>
+                <span style="font-size:11px;color:#8892A8;font-weight:600">15x asked</span>
+                <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Dione</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Devialet Gemini II</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 108 dB</span><span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(0,212,180,0.08);color:#00D4B4">Phantom Ultimate 98 dB</span>
               </div>
             </div>
           </div>
       </div>
     </div>
 
-    <!-- ROW 6: PRODUCT TABLE -->
     <div class="section-gap">
       <span class="section-label">Products Overview</span>
       <div class="card" style="padding:0;overflow:hidden">
@@ -274,20 +242,15 @@
             </tr>
           </thead>
           <tbody>
-            
       <tr class="product-row" data-product-idx="0" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>
+            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
             <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">Devialet Dione</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:800;font-size:14px;color:#00D4B4">3</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:#FF6B6B">1.7x</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:800;font-size:14px;color:#00D4B4">3</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:600;font-size:13px;color:#FF6B6B">1.7x</span></td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:0%;background:#00D4B4;border-radius:3px"></div>
@@ -300,29 +263,19 @@
             <span style="color:#FF6B6B">0%</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
-        </td>
-        <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No significant pain points reported this week.</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:700;font-size:13px;color:#F5A623">100%</span></td>
+        <td style="padding:15px 16px;max-width:240px"><span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No specific pain points were identified this week.</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span></td>
       </tr>
       <tr class="product-row" data-product-idx="1" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#FF6B6B;flex-shrink:0"></span>
+            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
             <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">Devialet Gemini II</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:800;font-size:14px;color:#00D4B4">8</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:#FF6B6B">2.1x</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:800;font-size:14px;color:#00D4B4">8</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:600;font-size:13px;color:#FF6B6B">2.1x</span></td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:12%;background:#00D4B4;border-radius:3px"></div>
@@ -335,64 +288,44 @@
             <span style="color:#FF6B6B">24%</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
-        </td>
-        <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Users are experiencing critical battery degradation, charging failures, and intermittent connectivity issues.</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:700;font-size:13px;color:#F5A623">100%</span></td>
+        <td style="padding:15px 16px;max-width:240px"><span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Customers are experiencing issues with battery life and charging, as well as inconsistent connectivity.</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span></td>
       </tr>
       <tr class="product-row" data-product-idx="2" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>
+            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
             <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">Phantom Ultimate 108 dB</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:800;font-size:14px;color:#00D4B4">29</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:#FF6B6B">2.5x</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:800;font-size:14px;color:#00D4B4">29</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:600;font-size:13px;color:#FF6B6B">2.5x</span></td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
-            <div style="width:60%;background:#00D4B4;border-radius:3px"></div>
-            <div style="width:27%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
+            <div style="width:1%;background:#00D4B4;border-radius:3px"></div>
+            <div style="width:86%;background:rgba(255,255,255,0.1);border-radius:3px"></div>
             <div style="width:13%;background:#FF6B6B;border-radius:3px"></div>
           </div>
           <div style="display:flex;gap:8px;margin-top:5px;font-size:10px;font-weight:700">
-            <span style="color:#00D4B4">60%</span>
-            <span style="color:#8892A8">27%</span>
+            <span style="color:#00D4B4">1%</span>
+            <span style="color:#8892A8">86%</span>
             <span style="color:#FF6B6B">13%</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
-        </td>
-        <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Bluetooth connectivity and pairing difficulties are the primary pain points.</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:700;font-size:13px;color:#F5A623">100%</span></td>
+        <td style="padding:15px 16px;max-width:240px"><span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Customers frequently report issues with Bluetooth connectivity and pairing failures.</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span></td>
       </tr>
       <tr class="product-row" data-product-idx="3" style="cursor:pointer;transition:background 0.15s ease;border-bottom:1px solid rgba(255,255,255,0.06)" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
         <td style="padding:15px 16px;white-space:nowrap">
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>
+            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>
             <span style="font-weight:700;font-size:13px;color:#F0F2F8;letter-spacing:0.02em">Phantom Ultimate 98 dB</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:800;font-size:14px;color:#00D4B4">0</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:600;font-size:13px;color:#FF6B6B">1x</span>
-        </td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:800;font-size:14px;color:#00D4B4">0</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:600;font-size:13px;color:#FF6B6B">1x</span></td>
         <td style="padding:15px 16px;min-width:130px">
           <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px">
             <div style="width:0%;background:#00D4B4;border-radius:3px"></div>
@@ -405,47 +338,33 @@
             <span style="color:#FF6B6B">0%</span>
           </div>
         </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-weight:700;font-size:13px;color:#F5A623">100%</span>
-        </td>
-        <td style="padding:15px 16px;max-width:240px">
-          <span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No significant pain points reported this week.</span>
-        </td>
-        <td style="padding:15px 16px;text-align:center">
-          <span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span>
-        </td>
-      </tr>
-          </tbody>
+        <td style="padding:15px 16px;text-align:center"><span style="font-weight:700;font-size:13px;color:#F5A623">100%</span></td>
+        <td style="padding:15px 16px;max-width:240px"><span style="font-size:12px;color:#C0C6D8;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">No specific pain points were identified this week.</span></td>
+        <td style="padding:15px 16px;text-align:center"><span style="font-size:11px;font-weight:700;color:#00D4B4;letter-spacing:0.06em">View →</span></td>
+      </tr></tbody>
         </table>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <div style="padding-top:1.5rem;margin-top:0.5rem;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <span>SQU-AI Intelligence v6.0</span>
+      <span>SQU-AI Intelligence v7.0</span>
       <span style="color:#3D4558">INTERNAL USE ONLY · SECURE DEPLOYMENT</span>
     </div>
   </div>
 
-  <!-- PRODUCT DEEP DIVE VIEW -->
   <div id="product-view" class="view hidden">
     <div class="back-btn" onclick="showDashboard()">← Back to Dashboard</div>
     <div class="section-gap">
-      <div class="filter-bar" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px">
-        <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')" style="font-size:12px;font-weight:700;padding:8px 18px;border-radius:10px;border:1px solid rgba(0,212,180,0.35);background:rgba(0,212,180,0.12);color:#00D4B4;cursor:pointer;transition:all 0.2s ease;white-space:nowrap">All Products</button><button class="filter-btn" data-filter="0" onclick="filterProducts(0)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>Devialet Dione</button><button class="filter-btn" data-filter="1" onclick="filterProducts(1)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#FF6B6B;flex-shrink:0"></span>Devialet Gemini II</button><button class="filter-btn" data-filter="2" onclick="filterProducts(2)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>Phantom Ultimate 108 dB</button><button class="filter-btn" data-filter="3" onclick="filterProducts(3)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#00D4B4;flex-shrink:0"></span>Phantom Ultimate 98 dB</button>
-      </div>
+      <div class="filter-bar" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px"><button class="filter-btn active" data-filter="all" onclick="filterProducts('all')" style="font-size:12px;font-weight:700;padding:8px 18px;border-radius:10px;border:1px solid rgba(0,212,180,0.35);background:rgba(0,212,180,0.12);color:#00D4B4;cursor:pointer;transition:all 0.2s ease;white-space:nowrap">All Products</button><button class="filter-btn" data-filter="0" onclick="filterProducts(0)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>Devialet Dione</button><button class="filter-btn" data-filter="1" onclick="filterProducts(1)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>Devialet Gemini II</button><button class="filter-btn" data-filter="2" onclick="filterProducts(2)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>Phantom Ultimate 108 dB</button><button class="filter-btn" data-filter="3" onclick="filterProducts(3)" style="font-size:12px;font-weight:600;padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#C0C6D8;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></span>Phantom Ultimate 98 dB</button></div>
     </div>
     <div id="product-cards-container">
-      
       <div class="product-detail-card" data-product-idx="0" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
         <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
-
-          <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
                 <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">Devialet Dione</span>
-                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(0,212,180,0.1);color:#00D4B4">healthy</span>
+                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
               <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">3</strong></span>
@@ -461,9 +380,8 @@
             </div>
           </div>
 
-          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">No pain points or unanswered questions, with customers actively exploring product versatility and comparisons.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">The product's sentiment is entirely neutral with no explicit positive feedback, preventing it from reaching a 'healthy' status.</div>
 
-          <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:0%;background:#00D4B4;border-radius:4px"></div>
@@ -475,65 +393,43 @@
               <span style="color:#8892A8">● 100% neutral</span>
               <span style="color:#FF6B6B">▼ 0% negative</span>
             </div>
-            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Customers are primarily seeking information and comparing products without expressing strong emotions.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Customer sentiment is entirely neutral, primarily consisting of pre-purchase inquiries and general questions without expressed emotion.</div>
           </div>
 
-          <!-- Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
 
             
           </div>
 
-          <!-- Upsell Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
-            
-              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
-                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
-                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asks about higher-tier Phantom Ultimate 98 dB or 108 dB for movies.</span>
-              </div>
-              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
-                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
-                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer seeks a versatile solution for both movies and music, implying potential for Phantom Ultimate.</span>
-              </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div><span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asked about considering Dione versus Phantom Ultimate 98 dB or 108 dB for movies and music.</span></div>
           </div>
 
-          <!-- Competitor Mentions -->
           
 
-          <!-- Marketing Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Comparison guide: Dione vs. Phantom Ultimate for movies/music</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Connectivity setup guide</div>
-              </div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create comparison content highlighting Devialet Dione's features against Phantom Ultimate 98 dB and 108 dB for movies and music.</div></div>
             </div>
           </div>
 
-          
-          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
-            Customers are exploring Dione's versatility for movies and music, with clear interest in comparing it to higher-tier Phantom products.
-          </div>
-
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">Devialet Dione conversations were low volume and neutral, with a clear signal for upsell opportunities to higher-tier Phantom products.</div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="1" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
         <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
-
-          <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
                 <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">Devialet Gemini II</span>
-                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(255,107,107,0.1);color:#FF6B6B">critical</span>
+                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
               <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">8</strong></span>
@@ -549,9 +445,8 @@
             </div>
           </div>
 
-          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">Critical due to significant pain points related to battery life, charging, and connectivity issues, impacting user experience.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">The product is under 'watch' due to a significant 24% of messages expressing pain points related to battery and connectivity, despite some positive feedback.</div>
 
-          <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:12%;background:#00D4B4;border-radius:4px"></div>
@@ -563,81 +458,51 @@
               <span style="color:#8892A8">● 64% neutral</span>
               <span style="color:#FF6B6B">▼ 24% negative</span>
             </div>
-            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">While some users praise ANC, a significant portion expresses frustration over battery and connectivity problems.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Sentiment is mixed, with some customers expressing love for the product, but a notable 24% negative sentiment due to battery and connectivity issues.</div>
           </div>
 
-          <!-- Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
             <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
                 <span style="font-size:11px;font-weight:700;padding:5px 12px;border-radius:7px;background:rgba(255,107,107,0.12);color:#FF6B6B;text-transform:uppercase;letter-spacing:0.1em">4 pain points</span>
               </div>
-              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Users are experiencing critical battery degradation, charging failures, and intermittent connectivity issues.</div>
+              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Customers are experiencing issues with battery life and charging, as well as inconsistent connectivity.</div>
               <div style="line-height:1.8"><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">ok, ive had them for a while and battery is quite bad now... like 2hours maybe?</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">i need help for my gemini, sometimes it doesnt connect</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">hi, i bought a gemini II and it doesnt chage anymore</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">yeah, it chages the case but the earbuds dont charge inside...</span></div>
-              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">These issues severely impact product usability and customer satisfaction, leading to frustration.</div>
+              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">These issues directly impact product usability and customer satisfaction, leading to frustration.</div>
             </div>
 
             
           </div>
 
-          <!-- Upsell Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
-            
-              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
-                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
-                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asks about other Devialet products to consider.</span>
-              </div>
-              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
-                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
-                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer explicitly asks for recommendations for another product.</span>
-              </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div><span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asked about any other Devialet product they should take a look at.</span></div><div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div><span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asked for recommendations for another Devialet product after purchasing Gemini II.</span></div>
           </div>
 
-          <!-- Competitor Mentions -->
           
 
-          <!-- Marketing Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#00D4B4;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Customers Love</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• ANC performance</div>
-              </div>
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Battery life degradation</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Charging issues</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Connectivity problems</div>
-              </div>
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Troubleshooting guide for Gemini II charging and connectivity</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Battery care tips for earbuds</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Firmware update benefits and instructions</div>
-              </div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#00D4B4;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Customers Love</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• i like the ANC</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• i love the gemini</div></div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Battery life is quite bad now</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• sometimes it doesnt connect</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• it doesnt chage anymore</div></div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop comprehensive troubleshooting guides for battery and charging issues.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create content explaining optimal app usage versus Bluetooth-only connection.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Provide information on recent software updates and their benefits.</div></div>
             </div>
           </div>
 
-          
-          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
-            Devialet Gemini II users are experiencing critical issues with battery life, charging, and connectivity, despite some appreciation for ANC.
-          </div>
-
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">Devialet Gemini II shows strong positive sentiment for ANC but is significantly impacted by battery and connectivity complaints, alongside interest in other Devialet products.</div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="2" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
         <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
-
-          <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
                 <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">Phantom Ultimate 108 dB</span>
-                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(0,212,180,0.1);color:#00D4B4">healthy</span>
+                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
               <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">29</strong></span>
@@ -653,79 +518,64 @@
             </div>
           </div>
 
-          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">Healthy, with a high volume of engagement and successful resolution of connectivity issues, despite some initial frustrations.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">The product is under 'watch' due to 13% of messages expressing pain points related to connectivity, despite a high resolution rate.</div>
 
-          <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
-              <div style="width:60%;background:#00D4B4;border-radius:4px"></div>
-              <div style="width:27%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
+              <div style="width:1%;background:#00D4B4;border-radius:4px"></div>
+              <div style="width:86%;background:rgba(255,255,255,0.08);border-radius:4px"></div>
               <div style="width:13%;background:#FF6B6B;border-radius:4px"></div>
             </div>
             <div style="display:flex;gap:1.5rem;margin-top:9px;font-size:12px;font-weight:700">
-              <span style="color:#00D4B4">▲ 60% positive</span>
-              <span style="color:#8892A8">● 27% neutral</span>
+              <span style="color:#00D4B4">▲ 1% positive</span>
+              <span style="color:#8892A8">● 86% neutral</span>
               <span style="color:#FF6B6B">▼ 13% negative</span>
             </div>
-            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Despite initial connectivity frustrations, successful resolutions contribute to a largely positive customer sentiment.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Sentiment is largely neutral with a significant portion of messages related to troubleshooting connectivity, and a small amount of positive feedback upon resolution.</div>
           </div>
 
-          <!-- Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
             <div style="flex:1;min-width:220px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
                 <span style="font-size:11px;font-weight:700;padding:5px 12px;border-radius:7px;background:rgba(255,107,107,0.12);color:#FF6B6B;text-transform:uppercase;letter-spacing:0.1em">10 pain points</span>
               </div>
-              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Bluetooth connectivity and pairing difficulties are the primary pain points.</div>
+              <div style="font-size:13px;color:#C0C6D8;margin-bottom:10px;line-height:1.65">Customers frequently report issues with Bluetooth connectivity and pairing failures.</div>
               <div style="line-height:1.8"><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">yes, ive got an issue with my 108... i cant connect it in bluetooth</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">i think we were cut</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">not pairing up</span><span style="display:inline-block;margin:3px 4px 3px 0;font-size:11px;font-weight:500;padding:5px 11px;background:rgba(255,107,107,0.1);color:#FFAAAA;border-radius:8px;line-height:1.4">yes i tried turning off the speaker, my phone too...</span></div>
-              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">Connectivity issues cause initial user frustration but are generally resolved, leading to positive outcomes.</div>
+              <div style="font-size:12px;color:#A8B2C8;margin-top:8px;font-style:italic">Connectivity problems directly hinder the user's ability to use the product, leading to frustration and support interactions.</div>
             </div>
 
             
           </div>
 
-          <!-- Upsell Signals -->
+          
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
+            <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div><span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer inquiries frequently fell into the 'upsell' category, indicating interest in accessories or multi-speaker setups.</span></div>
+          </div>
+
           
 
-          <!-- Competitor Mentions -->
-          
-
-          <!-- Marketing Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Bluetooth connectivity issues</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Pairing difficulties</div>
-              </div>
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Troubleshooting guide for Phantom Ultimate Bluetooth connectivity</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• WiFi vs. Bluetooth connectivity benefits</div>
-              </div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#FF6B6B;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Objections</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• I can't connect it in bluetooth</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• not pairing up</div></div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop detailed troubleshooting guides for Bluetooth and Wi-Fi connectivity issues.</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Create content comparing Wi-Fi versus Bluetooth connection for optimal performance.</div></div>
             </div>
           </div>
 
-          
-          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
-            Phantom Ultimate 108 dB users frequently encounter Bluetooth connectivity issues, which are successfully resolved, leading to overall positive sentiment.
-          </div>
-
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">Phantom Ultimate 108 dB is a high-engagement product with prevalent connectivity issues, but also a strong indicator of interest in further Devialet ecosystem expansion.</div>
         </div>
       </div>
       <div class="product-detail-card" data-product-idx="3" style="display:none;opacity:0;animation:fadeSlideIn 0.4s ease forwards">
         <div style="background:#1A2030;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.25rem 2.5rem">
-
-          <!-- Header -->
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:8px">
             <div>
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
                 <span style="font-weight:800;font-size:22px;letter-spacing:0.01em;color:#F0F2F8">Phantom Ultimate 98 dB</span>
-                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(0,212,180,0.1);color:#00D4B4">healthy</span>
+                <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 10px;border-radius:20px;background:rgba(245,166,35,0.1);color:#F5A623">watch</span>
               </div>
               <div style="display:flex;gap:1.5rem;font-size:13px;color:#A8B2C8;flex-wrap:wrap">
                 <span>Scans <strong style="color:#00D4B4;font-weight:800">0</strong></span>
@@ -741,9 +591,8 @@
             </div>
           </div>
 
-          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">Healthy, with a clear pre-purchase inquiry indicating interest in product differentiation.</div>
+          <div style="font-size:13px;color:#C0C6D8;font-style:italic;margin:10px 0 4px;line-height:1.6">The product is under 'watch' due to a lack of explicit positive sentiment, with the single interaction being a neutral comparison question.</div>
 
-          <!-- Sentiment bar -->
           <div style="margin-top:18px">
             <div style="display:flex;height:7px;border-radius:4px;overflow:hidden;gap:2px">
               <div style="width:0%;background:#00D4B4;border-radius:4px"></div>
@@ -755,55 +604,38 @@
               <span style="color:#8892A8">● 100% neutral</span>
               <span style="color:#FF6B6B">▼ 0% negative</span>
             </div>
-            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">The single customer interaction was a neutral inquiry about product differences.</div>
+            <div style="font-size:12.5px;color:#C0C6D8;margin-top:9px;line-height:1.65">Customer sentiment is entirely neutral, based on a single pre-purchase comparison question.</div>
           </div>
 
-          <!-- Pain Points | Unanswered -->
           <div style="display:flex;gap:1rem;margin-top:22px;flex-wrap:wrap">
             
 
             
           </div>
 
-          <!-- Upsell Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5A623;margin-bottom:12px">⚡ Upsell Signals</div>
-            
-              <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
-                <div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div>
-                <span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asks for the difference between 108 dB and 98 dB, indicating interest in the higher-tier model.</span>
-              </div>
+            <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><div style="width:6px;height:6px;border-radius:50%;background:#F5A623;flex-shrink:0;margin-top:5px"></div><span style="font-size:13px;color:#C0C6D8;line-height:1.6">Customer asked about the difference between Phantom Ultimate 108 dB and 98 dB.</span></div>
           </div>
 
-          <!-- Competitor Mentions -->
           
 
-          <!-- Marketing Signals -->
           
           <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#A8B2C8;margin-bottom:14px">Marketing Signals</div>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
               
               
-              
-              <div style="flex:1;min-width:160px">
-                <div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div>
-                <div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Comparison guide: Phantom Ultimate 108 dB vs. 98 dB</div>
-              </div>
+              <div style="flex:1;min-width:160px"><div style="font-size:11px;font-weight:700;color:#F5A623;margin-bottom:9px;text-transform:uppercase;letter-spacing:0.1em">Content Opportunities</div><div style="font-size:12.5px;color:#C0C6D8;margin-bottom:7px;line-height:1.55">• Develop clear comparison content highlighting the differences and benefits between Phantom Ultimate 98 dB and 108 dB.</div></div>
             </div>
           </div>
 
-          
-          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">
-            A customer is actively seeking information to differentiate between the Phantom Ultimate 98 dB and 108 dB models.
-          </div>
-
+          <div style="margin-top:18px;font-size:13px;color:#C0C6D8;line-height:1.75;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07)">Phantom Ultimate 98 dB had minimal engagement, but the single interaction presented a clear upsell opportunity to the 108 dB model.</div>
         </div>
-      </div>
-    </div>
+      </div></div>
     <div style="padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#8892A8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <span>SQU-AI Intelligence v6.0</span>
+      <span>SQU-AI Intelligence v7.0</span>
       <span style="color:#3D4558">INTERNAL USE ONLY · SECURE DEPLOYMENT</span>
     </div>
   </div>
@@ -823,9 +655,7 @@
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       const target = document.querySelector('.filter-btn[data-filter="' + idx + '"]');
       if (target) target.classList.add('active');
-    } else {
-      filterProducts('all');
-    }
+    } else { filterProducts('all'); }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   function filterProducts(filter) {
@@ -841,9 +671,7 @@
         card.style.animation = 'none';
         card.offsetHeight;
         card.style.animation = 'fadeSlideIn 0.4s ease forwards';
-      } else {
-        card.style.display = 'none';
-      }
+      } else { card.style.display = 'none'; }
     });
   }
   document.querySelectorAll('.product-row').forEach(row => {
@@ -852,5 +680,4 @@
     });
   });
 </script>
-</body>
-</html>
+</body></html>
